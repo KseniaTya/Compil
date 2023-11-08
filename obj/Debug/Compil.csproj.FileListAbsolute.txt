@@ -1,0 +1,11 @@
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\bin\Debug\Compil.exe.config
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\bin\Debug\Compil.exe
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\bin\Debug\Compil.pdb
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.csproj.AssemblyReference.cache
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.csproj.SuggestedBindingRedirects.cache
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.Form1.resources
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.Properties.Resources.resources
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.csproj.GenerateResource.cache
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.csproj.CoreCompileInputs.cache
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.exe
+C:\Users\ezik1\Desktop\Учебное\Конструирование компиляторов\Compil\obj\Debug\Compil.pdb
