@@ -12,6 +12,7 @@ namespace Compil
 {
     public partial class Form1 : Form
     {
+        LexicalAnalyzer lexA = new LexicalAnalyzer();
         public Form1()
         {
             InitializeComponent();
@@ -24,9 +25,21 @@ namespace Compil
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = " ";
-            Calculator calc=new Calculator();
-            textBox1.Text = calc.Calculating(richTextBox1.Text);
+
+            lexA.keywords.Sort();
+            lexA.separators.Sort();
+            lexA.richTextBox = richTextBox1.Text;
+            lexA.LexAnalyzer();
+            foreach(var s in lexA.errors)
+            {
+                textBox1.Text += s;
+                textBox1.Text += "\n";
+            }
+        }
+
+        private void save_to_file_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
