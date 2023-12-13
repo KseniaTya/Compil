@@ -12,8 +12,9 @@ namespace Compil
     {
         public List<string> keywords = new List<string>() { "{", "}", "bool", "double", "else", "false", "if", "int", "read", "true", "var", "while", "write"};
         public List<string> separators = new List<string>() {"-", "!=", "&&", "(", ")", "*", "*/", ",", ".", "/", "/*", ":", ";", "||", "+", "<", "<=", "=", "==", ">", ">=" };
-        private List<string> variebles = new List<string>();
-        private List<string> numbers = new List<string>();
+        public List<string> variebles = new List<string>();
+        public List<string> words = new List<string>();
+        public List<string> numbers = new List<string>();
         public List<string> keys = new List<string>();
         public List<string> errors = new List<string>();
         string buffer="";
@@ -29,6 +30,7 @@ namespace Compil
         void Add()
         {
             buffer += ch;
+            number++;
         }
         int SearchInKeywords()
         {
@@ -139,7 +141,7 @@ namespace Compil
                                 Null();
                                 Add();
                                 Symbol();
-                                cs = "I"; //обработка числа
+                                cs = "I"; //обработка слова
                                 break;
                             }
                             else if(Digit())
@@ -147,7 +149,7 @@ namespace Compil
                                 Null();
                                 Add();
                                 Symbol();
-                                cs = "N"; //обработка слова
+                                cs = "N"; //обработка числа
                             }
                             else if(ch == '/') 
                             {
@@ -202,6 +204,9 @@ namespace Compil
                                 Symbol();
                             }
                             keys.Add(buffer);
+                            variebles.Add(buffer);
+                            //numbers.Add(buffer);
+                            words.Add(buffer);
                             
                             cs = "H";
                             break;
@@ -230,6 +235,12 @@ namespace Compil
                                 Symbol();
                                 cs = "P1";
                                 break;
+                            }
+                            else
+                            {
+                                keys.Add(buffer);
+                                numbers.Add(buffer);
+                                cs = "H";
                             }
                             break;
                         }
@@ -267,7 +278,9 @@ namespace Compil
                             }
                             else
                             {
-
+                                keys.Add(buffer);
+                                numbers.Add(buffer);
+                                cs = "H";
                             }
                             break;
                         }
@@ -314,6 +327,7 @@ namespace Compil
                                 /* keys.Add("(3, " + numbers.Count().ToString() + ")");
                                  numbers.Add(convertatuon_to_decimal()); */
                                 keys.Add(buffer);
+                                numbers.Add(buffer);
                                 cs = "H";
                                 Null();
                             }
@@ -374,6 +388,8 @@ namespace Compil
                             {
                                 Add();
                                 cs = "OG";
+                                keys.Add(buffer);
+                                Null();
                             }
                             else
                             {
@@ -390,10 +406,12 @@ namespace Compil
                             while(ch!='*' && number != richTextBox.Length - 1)
                             {
                                 Symbol();
+                                number= number+1;
                             }
                             if(ch=='*')
                             {
                                 Add();
+                                number = number-1;
                                 Symbol();
                                 if(ch=='/')
                                 {
